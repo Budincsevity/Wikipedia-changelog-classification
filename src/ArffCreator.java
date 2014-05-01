@@ -120,7 +120,7 @@ public class ArffCreator {
 		String				line;
 		double[]			vals;
 		int					index = 0;
-		int					insertLenght = 0;
+		int					insertLength = 0;
 		int					insertWords = 0;
 		int					deleteLenght = 0;
 		int					deleteWords = 0;
@@ -175,7 +175,7 @@ public class ArffCreator {
 			
 				//Calculate the numbers
 				if(splitLine[0].equals("I")) {
-					insertLenght += splitLine[1].length();
+					insertLength += splitLine[1].length();
 					insertWords += splitLine[1].split(" ").length;
 				} else {
 					deleteLenght += splitLine[1].length();
@@ -188,7 +188,7 @@ public class ArffCreator {
 				//4: Edits
 				vals[index++] = data.attribute(4).addStringValue(changes);
 				//5: iCounter
-				vals[index++] = insertLenght;
+				vals[index++] = insertLength;
 				//6: iWords
 				vals[index++] = insertWords;
 				//7: dCounter
@@ -202,7 +202,7 @@ public class ArffCreator {
 				index = 0;
 				changes = "";
 				commentLength = 0;
-				insertLenght = 0;
+				insertLength = 0;
 				insertWords = 0;
 				deleteLenght = 0;
 				deleteWords = 0;
